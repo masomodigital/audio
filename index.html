@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Narration with Synchronized Text</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #narration {
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+    span {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Narration with Synchronized Text</h1>
+  <audio id="audio" controls>
+    <source src="https://your-github-username.github.io/your-repo-name/narration.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div id="narration">
+    <span id="part1">Welcome, everyone, to the exciting future of digital learning and business with CBC Digital!</span>
+    <span id="part2">We are thrilled to introduce you to an incredible opportunity: CBC Digital Business. This innovative platform not only grants you access to a wealth of educational resources but also offers a lucrative business model.</span>
+    <span id="part3">Today, we'll walk you through the sign-up process and explore how you can maximize your potential with CBC Digital. Imagine embarking on this journey with a simple yet significant step.</span>
+    <span id="part4">You start as 'You' in our animation, representing your entry into the vibrant CBC Digital ecosystem. This is where your adventure begins.</span>
+    <span id="part5">Our first critical action is downloading the app. An arrow guides you towards this essential step. You can easily do this by visiting one of the following links: (https://cutt.ly/downloadcbc) or (https://cutt.ly/masomo). Choose the link that suits you best and proceed to download the app. This app is your gateway to a world of opportunities, setting the stage for your future success.</span>
+    <span id="part6">Once you've downloaded the app, the next arrow directs you to activate it. To activate your app, a nominal fee of just one hundred shillings is required. This small investment unlocks immense value, paving the way for your growth and success.</span>
+    <span id="part7">Upon successful activation, you are immediately granted access to the CBC Digital Library. This extensive library is filled with valuable resources designed to enhance your learning experience and broaden your knowledge base. Simultaneously, you officially join the CBC Digital Business. This dual benefit not only enhances your knowledge but also positions you for financial success. It's a powerful combination of education and opportunity.</span>
+    <span id="part8">As a proud member of CBC Digital Business, your next step is to share the app with others. Guide them on how to download and install it, ensuring they understand the benefits just as you have. For every new user who activates the app, you receive an activation fee of one hundred shillings. This is where your earnings journey begins.</span>
+    <span id="part9">To further increase your earnings, you can sign up new users directly. Log into the app, sign up a user by correctly entering their details, and pay fifty shillings on their behalf. The balance of fifty shillings belongs to you! This process not only boosts your earnings but also expands your network.</span>
+    <span id="part10">New users you sign up receive instant approval to access the CBC Digital Library and join the CBC Digital Business. This ensures they start enjoying the benefits right away, just as you did. It's a seamless process designed for maximum efficiency and benefit.</span>
+    <span id="part11">The beauty of the CBC Digital Business model lies in its limitless potential. Every user has the opportunity to sign up an unlimited number of new users, each earning fifty shillings per activation. This creates a continuous cycle of growth and earning, with no upper limit on how many users you can sign up or how much you can earn.</span>
+    <span id="part12">Imagine the possibilities: with each new user you sign up, your earnings grow, and your network expands. The more users you bring in, the more you earn. It's a self-sustaining model that rewards your efforts and dedication.</span>
+    <span id="part13">We invite you to be a part of this innovative and rewarding journey. By joining CBC Digital Business, you are not only enhancing your own learning and earning opportunities but also contributing to a growing community of empowered individuals.</span>
+    <span id="part14">Thank you for being here today. We look forward to seeing you thrive with CBC Digital. Embrace this opportunity, share it with others, and watch your success soar. Together, we are building a brighter future with CBC Digital.</span>
+    <span id="part15">The future of digital learning and business is here, and it starts with you. As you embark on this journey, you will discover the immense value and potential that CBC Digital holds. This is not just about accessing a vast library of resources; it's about joining a community that is committed to growth, learning, and financial success. The steps are simple, yet powerful. Download the app, activate it, and immerse yourself in the wealth of knowledge available at your fingertips. But don't stop there. Share this opportunity with others and watch as your network grows and your earnings increase. This is a business model designed to reward your efforts and dedication, with no limits on how far you can go.</span>
+    <span id="part16">Every new user you bring in is a step towards greater financial freedom and success. With each activation, you not only earn but also empower others to access valuable educational resources and join the CBC Digital Business. It's a cycle of continuous growth and opportunity, one that is driven by your commitment and enthusiasm. As you guide new users through the process, you are building a network of empowered individuals, each contributing to the success of the community. This is the essence of CBC Digital Business: a collaborative effort that benefits everyone involved. The unlimited earning potential is a testament to the power of this model.</span>
+  </div>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const narration = document.getElementById('narration');
+    const spans = narration.getElementsByTagName('span');
+
+    const timestamps = [
+      0,    // part1
+      5,    // part2
+      10,   // part3
+      15,   // part4
+      20,   // part5
+      25,   // part6
+      30,   // part7
+      35,   // part8
+      40,   // part9
+      45,   // part10
+      50,   // part11
+      55,   // part12
+      60,   // part13
+      65,   // part14
+      70,   // part15
+      75    // part16
+      // Add or adjust these timestamps according to your audio file's actual timing
+    ];
+
+    audio.ontimeupdate = function() {
+      const currentTime = audio.currentTime;
+      for (let i = 0; i < spans.length; i++) {
+        if (currentTime >= timestamps[i] && (i === spans.length - 1 || currentTime < timestamps[i + 1])) {
+          spans[i].classList.add('highlight');
+        } else {
+          spans[i].classList.remove('highlight');
+        }
+      }
+    };
+  </script>
+</body>
+</html>
